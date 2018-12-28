@@ -1,0 +1,26 @@
+[
+    {
+        "nombre": "Hotel Machaco",
+        "logo": "https://centraldeofertas.es/wp-content/uploads/2017/03/Hotel-Machaco-1.jpg",
+        "telefono": "902 36 37 57",
+        "direccion": "Calle Pozo Concejo, 29",
+        "web": "",
+        "email": ""
+    },
+    {
+        "nombre": "Hotel Castillo de Luna",
+        "logo": "http://gastroextremadura.es/wp-content/uploads/2015/03/P1030062.jpg",
+        "telefono": "924 40 15 46",
+        "direccion": "Carretera de Valencia de Alcántara a Badajoz, 34",
+        "web": "",
+        "email": ""
+    },
+    {
+        "nombre": "Hotel rural Los Cantos",
+        "logo": "https://media-cdn.tripadvisor.com/media/photo-s/0b/52/c5/26/cortijo-los-cantos.jpg",
+        "telefono": "638 76 21 22",
+        "direccion": "Finca Los Cantos (Aptdo. 15)",
+        "web": "",
+        "email": ""
+    }
+]
