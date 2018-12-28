@@ -9,7 +9,7 @@
       <div class="row">
         {% for evento in row %}
             <div  class="col-xs-12 col-sm-6 col-md-4">
-                <div class="card" data-toggle="modal" data-target="#modalevento">    
+                <div class="card" data-toggle="modal" data-target="#modalevento{{loop.index}}">    
                     <img class="card-img-top" src='/image/{{evento.foto}}' height="40px" alt="Card image cap">
                     <div class="card-body">
                     <h5 class="card-title">{{ evento.nombre}}</h5>                                
@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div class="modal fade" id="modalevento" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal fade" id="modalevento{{loop.index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
