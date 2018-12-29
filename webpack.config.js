@@ -17,8 +17,10 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
      */
-    .addEntry('app', './assets/js/app.js')
-    //.addEntry('page1', './assets/js/page1.js')
+    .addStyleEntry('css/app', './assets/css/app.css')
+    .addStyleEntry('css/inicio', './assets/css/inicio.css')
+    .addStyleEntry('css/servicio', './assets/css/servicio.css')
+    .addEntry('js/app', './assets/js/app.js')
     //.addEntry('page2', './assets/js/page2.js')
 
     // will require an extra script tag for runtime.js
@@ -45,7 +47,7 @@ Encore
     //.enableTypeScriptLoader()
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    .autoProvidejQuery()
 
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()

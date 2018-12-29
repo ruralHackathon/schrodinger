@@ -1,3 +1,32 @@
-body {
-    background-color: lightgray;
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
+
+body {
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Header */
+
+header > nav > a {
+    border-radius: 25px;
+    border: 2px solid #1e56a0;
+    padding: 10px; 
+    background: white;       
+}
+
+header > nav {
+    background: #163172;         
+}
+
+
+
+ 
+

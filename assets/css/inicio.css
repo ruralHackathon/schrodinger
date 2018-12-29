@@ -1,0 +1,59 @@
+
+
+ #inicio {
+    justify-content: flex-start;
+    flex-direction: column;
+    display: flex;
+    margin-top: 100px;
+    width: 100%;
+
+}
+
+#inicio > div.row > div.col > div > a {
+    text-decoration: none;
+ }
+
+#inicio > div.row > div.col > div  {
+    background-color: #d6e4f0;
+    padding: 30px;
+    width: 50%;
+    border-bottom: 2px solid white;
+    color: #163172;
+    cursor: pointer;   
+}
+
+#inicio > div.row > div.col > div:hover  {
+    background-color: #163172;
+    color: white;
+    width: 80%;
+}
+
+#inicio > div.row > div.col > div:hover a {
+    color: white;
+}
+
+
+
+/* #inicio {
+    justify-content: center;
+    display: flex;
+    margin-top: 250px;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+   /* flex-direction: column; ponerlo en columna 
+}
+
+#inicio > div  {
+    border-radius: 25px;
+    border: 2px solid #163172;
+    padding: 10px;
+    
+}
+
+#inicio > div > a {
+    text-decoration: none;
+    color: #163172;
+    
+}*/

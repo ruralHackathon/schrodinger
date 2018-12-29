@@ -1,17 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/inicio.css')}}">{% endblock  %}
 
 {% block body %}
-<div class="container">
-    <div>
-        <a href="{{ path('urgencia_index') }}">Teléfonos de urgencia</a>
+<div class="container" id="inicio">
+    <div class="row">
+        <div class="col">
+            <div>
+                <a href="{{ path('urgencia_index') }}">Urgencia</a>
+            </div>
+            <div>
+                <a href="{{ path('servicio_index') }}">Servicios</a>
+            </div>
+            <div>
+                <a href="{{ path('evento_index') }}">Eventos</a>
+            </div>
+            <div>
+                <a href="#">Lugares</a>
+            </div>
+        </div>
+        <div class="col">
+            <img src="" alt=" imagen ">
+        </div>
     </div>
-    <div>
-        <a href="{{ path('servicio_index') }}">Servicios</a>
-    </div>
-    <div>
-        <a href="{{ path('evento_index') }}">Eventos</a>
-    </div>
+    
+    
 </div>
 {% endblock %}

@@ -1,0 +1,8 @@
+
+#servicio{
+    margin: 30px;
+}
+
+#servicio  .card-body, .card-text{
+    text-align: center;
+}

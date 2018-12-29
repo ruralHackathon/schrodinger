@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Servicio{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/servicio.css')}}">{% endblock  %}
 
 {% block body %}
     <h1>Servicio</h1>
@@ -8,9 +9,9 @@
       <div class="row">
         {% for servicio in row %}
             <div  class="col-xs-12 col-sm-6 col-md-4">
-                <div class="card">
+                <div class="card" id="servicio">
                 <a data-toggle="modal" data-target="#modalservicio">    
-                    <img class="card-img-top" src='/image/{{servicio.logo}}' height="40px" alt="Card image cap">
+                    <img class="card-img-top" src='/image/{{servicio.logo}}'  alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ servicio.nombre}}</h5></a>                                  
                     </div>
@@ -30,7 +31,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <img class="card-img-top" src='/image/{{servicio.logo}}' height="40px" alt="Card image cap">
+                        <img class="card-img-top" src='/image/{{servicio.logo}}' heigth="18rem" alt="Card image cap">
                         <p>Teléfono: {{ servicio.telefono}} </p>
                         {% if servicio.web != null %}
                         <p>Web: {{ servicio.web}} </p>
