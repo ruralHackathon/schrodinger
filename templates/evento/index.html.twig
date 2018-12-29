@@ -31,7 +31,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <img class="card-img-top" src='/image/eventos/{{evento.foto}}' height="100px" alt="Card image cap">
+                        <img class="card-img-top" src='/image/eventos/{{evento.foto}}' height="300px" alt="Card image cap">
                         {% if evento.fecha|date('H:i') != '00:00'%}
                             <p><strong> {{ evento.fecha|date('d-m-Y H:i')}} </strong></p>
                         {% else %}
