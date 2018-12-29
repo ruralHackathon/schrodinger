@@ -1,4 +1,43 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
-h1 {
-    color: green;
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
+
+body {
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Header */
+
+header > nav > a {
+    border-radius: 25px;
+    border: 2px solid #1e56a0;
+    padding: 10px; 
+    background: white;       
+}
+
+header > nav > a > img {
+    height: 50px;
+}
+
+header > nav {
+    background: #163172;         
+}
+
+/* h1 */
+
+body > h1 {
+    margin: 20px;
+    color: #163172;
+}
+
+
+
+ 
+

@@ -1,0 +1,7 @@
+#lugar > div.row{
+    margin: 30px;
+}
+
+#lugar > div.row  div.card{
+    border: 1px solid #163172;
+}
