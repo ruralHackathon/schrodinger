@@ -1,0 +1,27 @@
+[
+    {
+        "nombre": "Policía Local",
+        "telefono": "669 48 32 35",
+        "direccion": "San Mateo, 1"
+    },
+    {
+        "nombre": "Guardia Civil",
+        "telefono": "924 40 00 05 ",
+        "direccion": "Calle de Mayorga, 0"
+    },
+    {
+        "nombre": "Bomberos",
+        "telefono": "924 40 02 27",
+        "direccion": "Calle la Encina, 1"
+    },
+    {
+        "nombre": "Centro de Salud (Urgencias)",
+        "telefono": "924 40 06 50",
+        "direccion": "Calle Santiago, 0"
+    },
+    {
+        "nombre": "Centro de Salud (Cita previa)",
+        "telefono": "901 10 07 37",
+        "direccion": "Calle Santiago, 0"
+    }
+]
