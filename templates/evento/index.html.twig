@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Eventos{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/evento.css')}}">{% endblock  %}
 
 {% block body %}
     <h1>Eventos</h1>
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="container" id="evento">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -17,7 +18,7 @@
         </div>
         {% for evento in eventos %}
             <div class="carousel-item" data-toggle="modal" data-target="#modalevento{{loop.index}}">
-                <img class="d-block w-100" src='/image/eventos/{{evento.foto}}' height="750px" alt="First slide">
+                <img class="d-block w-100" src='/image/eventos/{{evento.foto}}'  alt="First slide">
             </div>
 
 
@@ -56,6 +57,9 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <a href="{{path('inicio')}}"><i class="fas fa-arrow-circle-left"></i>Volver</a>
+    
+    </div>
+
+    
 {% endblock %}
 

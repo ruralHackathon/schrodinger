@@ -1,0 +1,26 @@
+
+#servicio{
+    margin: 30px;
+}
+
+#servicio  .card-body, .card-text{
+    text-align: center;
+}
+
+#servicio img.img-fluid{
+    width: 100%;
+}
+
+#servicio{
+    border: 1px solid #163172;
+}
+
+#servicio:hover{
+    -ms-transform: scale(1.10); /* IE 9 */
+    -webkit-transform: scale(1.10); /* Safari 3-8 */
+    transform: scale(1.10); 
+}
+
+#servicio-modal{
+    border: 1px solid #163172;
+}

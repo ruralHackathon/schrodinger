@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Servicio{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/servicio.css')}}">{% endblock  %}
 
 {% block body %}
     <h1>Servicio</h1>
@@ -8,8 +9,8 @@
       <div class="row">
         {% for servicio in row %}
             <div  class="col-xs-12 col-sm-6 col-md-4">
-                <div class="card" data-toggle="modal" data-target="#modalservicio{{loop.index}}">
-                    <img class="card-img-top" src='/image/servicios/{{servicio.logo}}' height="300px" alt="Card image cap">
+                <div class="card" id="servicio" style="width:18rem" data-toggle="modal" data-target="#modalservicio{{loop.index}}">
+                    <img class="img-fluid" src='/image/servicios/{{servicio.logo}}' height="300px" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ servicio.nombre}}</h5>                                 
                     </div>
@@ -21,23 +22,23 @@
 
             <div class="modal fade" id="modalservicio{{loop.index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle"> {{servicio.nombre}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <img class="card-img-top" src='/image/servicios/{{servicio.logo}}' height="40px" alt="Card image cap">
-                        <p>Teléfono: {{ servicio.telefono}} </p>
-                        {% if servicio.web != null %}
-                        <p>Web: {{ servicio.web}} </p>
-                        {% endif %}
-                        {% if servicio.email != null %}
-                        <p>Email: {{ servicio.email}} </p>
-                        {% endif %}
-                    </div>
+                    <div class="modal-content" id="servicio-modal">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle"> {{servicio.nombre}}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="img-fluid" src='/image/servicios/{{servicio.logo}}' alt="Card image cap">
+                            <p>Teléfono: {{ servicio.telefono}} </p>
+                            {% if servicio.web != null %}
+                            <p>Web: {{ servicio.web}} </p>
+                            {% endif %}
+                            {% if servicio.email != null %}
+                            <p>Email: {{ servicio.email}} </p>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>  
