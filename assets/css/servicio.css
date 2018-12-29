@@ -1,6 +1,7 @@
 
 #servicio{
     margin: 30px;
+    height: 400px;
 }
 
 #servicio  .card-body, .card-text{
@@ -24,3 +25,5 @@
 #servicio-modal{
     border: 1px solid #163172;
 }
+
+

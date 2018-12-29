@@ -4,7 +4,7 @@
 {% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/evento.css')}}">{% endblock  %}
 
 {% block body %}
-    <h1>Eventos</h1>
+<br>
     <div class="container" id="evento">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -18,7 +18,7 @@
         </div>
         {% for evento in eventos %}
             <div class="carousel-item" data-toggle="modal" data-target="#modalevento{{loop.index}}">
-                <img class="d-block w-100" src='/image/eventos/{{evento.foto}}'  alt="First slide">
+                <img class="d-block w-100" src='/image/eventos/{{evento.foto}}' height="750px" alt="First slide">
             </div>
 
 

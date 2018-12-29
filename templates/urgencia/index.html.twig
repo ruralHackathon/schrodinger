@@ -1,14 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Urgencias{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/urgencia.css')}}">{% endblock  %}
 
 {% block body %}
     <h1>Urgencias</h1>
+    <div class="container" id="urgencias">
     {% for row in urgencias|batch(6) %}
     <div class="row">
         {% for urgencia in row %} 
             <div class="col-sm-2">
-                <div class="card h-100">
+                <div class="card h-100" id="urgencia">
                     <div>
                         {% if urgencia.imagen is defined %}
                             <img class="card-img-top" src='/image/urgencias/{{urgencia.imagen}}' height="150px" alt="Imagen urgencia">
@@ -22,4 +24,5 @@
         {% endfor %}
     </div>
     {% endfor %}
+    </div>
 {% endblock %}

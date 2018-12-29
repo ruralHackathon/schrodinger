@@ -4,13 +4,14 @@
 {% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/servicio.css')}}">{% endblock  %}
 
 {% block body %}
-    <h1>Servicio</h1>
-    {% for row in servicios|batch(3) %}
+    <h1>Servicios</h1>
+    <div class="container">
+    {% for row in servicios|batch(3) %} 
       <div class="row">
         {% for servicio in row %}
-            <div  class="col-xs-12 col-sm-6 col-md-4">
+            <div  class="col-xs-12 col-sm-6 col-md-4"> 
                 <div class="card" id="servicio" style="width:18rem" data-toggle="modal" data-target="#modalservicio{{loop.index}}">
-                    <img class="img-fluid" src='/image/servicios/{{servicio.logo}}' height="300px" alt="Card image cap">
+                    <img class="img-fluid" src='/image/servicios/{{servicio.logo}}' style="height:380px" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ servicio.nombre}}</h5>                                 
                     </div>
@@ -45,5 +46,5 @@
         {% endfor %}
       </div>
     {% endfor %}  
-<a href="{{path('inicio')}}"><i class="fas fa-arrow-circle-left"></i>Volver</a>
+    </div>
 {% endblock %}

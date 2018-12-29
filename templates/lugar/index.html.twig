@@ -4,6 +4,7 @@
 {% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/lugar.css')}}">{% endblock  %}
 
 {% block body %}
+<h1>Lugares</h1>
     <div class="container" id="lugar">
         {% for row in lugars|batch(3) %}
       <div class="row">
@@ -20,7 +21,6 @@
         {% endfor %}
     </div>
     {% endfor %}
-    <a href="{{path('inicio')}}"><i class="fas fa-arrow-circle-left"></i>Volver</a>
     </div>
    
 {% endblock %}

@@ -21,6 +21,7 @@ Encore
     .addStyleEntry('css/evento', './assets/css/evento.css')
     .addStyleEntry('css/lugar', './assets/css/lugar.css')
     .addStyleEntry('css/servicio', './assets/css/servicio.css')
+    .addStyleEntry('css/urgencia', './assets/css/urgencia.css')
     .addEntry('app', './assets/js/app.js')
     //.addEntry('page2', './assets/js/page2.js')
 
