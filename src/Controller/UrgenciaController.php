@@ -47,14 +47,6 @@ class UrgenciaController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="urgencia_show", methods={"GET"})
-     */
-    public function show(Urgencia $urgencium): Response
-    {
-        return $this->render('urgencia/show.html.twig', ['urgencium' => $urgencium]);
-    }
-
-    /**
      * @Route("/{id}/edit", name="urgencia_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Urgencia $urgencium): Response

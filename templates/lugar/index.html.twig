@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lugares{% endblock %}
+
+{% block body %}
+   {% for row in lugars|batch(3) %}
+      <div class="row">
+        {% for lugar in row %}
+            <div  class="col-xs-12 col-sm-6 col-md-4">
+                <div class="card">    
+                    <img class="card-img-top" src='/image/lugares/{{lugar.imagen}}' height="300px" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ lugar.monumento}}</h5>
+                    <p>Coordenadas {{lugar.latitud}} - {{lugar.longitud}} </p>                                
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+<a href="{{path('inicio')}}"><i class="fas fa-arrow-circle-left"></i>Volver</a>
+{% endblock %}
