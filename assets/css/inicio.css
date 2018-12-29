@@ -1,6 +1,5 @@
 
-
- #inicio {
+#inicio {
     justify-content: flex-start;
     flex-direction: column;
     display: flex;
@@ -11,7 +10,7 @@
 
 #inicio > div.row > div.col > div > a {
     text-decoration: none;
- }
+}
 
 #inicio > div.row > div.col > div  {
     background-color: #d6e4f0;

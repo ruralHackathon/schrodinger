@@ -22,6 +22,10 @@ header > nav > a {
     background: white;       
 }
 
+header > nav > a > img {
+    height: 50px;
+}
+
 header > nav {
     background: #163172;         
 }

@@ -1,21 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Eventos{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/evento.css')}}">{% endblock  %}
 
 {% block body %}
     <h1>Eventos</h1>
-
-    <!---{% for row in eventos|batch(3) %}
-      <div class="row">
-        {% for evento in row %}
-            <div  class="col-xs-12 col-sm-6 col-md-4">
-                <div class="card" data-toggle="modal" data-target="#modalevento{{loop.index}}">    
-                    <img class="card-img-top" src='/image/eventos/{{evento.foto}}' height="300px" alt="Card image cap">
-                    <div class="card-body">
-                    <h5 class="card-title">{{ evento.nombre}}</h5>                                
-                    </div>
-                </div>
+    <div class="container" id="evento">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+                <img class="d-block w-100" src='/image/castillo.jpg' alt="First slide">
+        </div>
+        {% for evento in eventos %}
+            <div class="carousel-item" data-toggle="modal" data-target="#modalevento{{loop.index}}">
+                <img class="d-block w-100" src='/image/eventos/{{evento.foto}}'  alt="First slide">
             </div>
+
 
             <div class="modal fade" id="modalevento{{loop.index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -42,58 +47,19 @@
                 </div>
             </div>  
         {% endfor %}
-      </div>
-    {% endfor %} -->
-
-
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    {% for evento in eventos %}
-        <div class="carousel-item active" data-toggle="modal" data-target="#modalevento{{loop.index}}">
-            <img class="d-block w-100" src'/image/eventos/{{evento.foto}}' alt="First slide">
-            <p>{{ evento.nombre}}</p>                                
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    
+    </div>
 
-        <div class="modal fade" id="modalevento{{loop.index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle"> {{evento.nombre}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <img class="card-img-top" src='/image/eventos/{{evento.foto}}' height="100px" alt="Card image cap">
-                        {% if evento.fecha|date('H:i') != '00:00'%}
-                            <p><strong> {{ evento.fecha|date('d-m-Y H:i')}} </strong></p>
-                        {% else %}
-                            <p><strong> {{ evento.fecha|date('d-m-Y')}} </strong></p>
-                        {% endif %}
-                        <p>{{ evento.descripcion}} </p>
-                        {% if evento.localizacion != null %}
-                        <p>Localización: {{ evento.localizacion}} </p>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>  
-    {% endfor %}
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-    <a href="{{path('inicio')}}"><i class="fas fa-arrow-circle-left"></i>Volver</a>
+    
 {% endblock %}
 

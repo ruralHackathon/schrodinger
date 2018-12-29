@@ -18,6 +18,8 @@ Encore
      * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
      */
     .addStyleEntry('css/inicio', './assets/css/inicio.css')
+    .addStyleEntry('css/evento', './assets/css/evento.css')
+    .addStyleEntry('css/lugar', './assets/css/lugar.css')
     .addStyleEntry('css/servicio', './assets/css/servicio.css')
     .addEntry('app', './assets/js/app.js')
     //.addEntry('page2', './assets/js/page2.js')
