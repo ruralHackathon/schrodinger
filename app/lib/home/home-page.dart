@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../eventos/eventos-page.dart';
 import '../servicios/servicios-page.dart';
 import '../urgencias/urgencias-page.dart';
+import '../visitas/visitas-page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
 
-  final _pages = [Eventos(), Servicios(), Urgencias()];
+  final _pages = [Eventos(), Visitas(), Servicios(), Urgencias()];
 
   void onTabTapped(int index) {
     if (mounted) {
@@ -37,6 +38,8 @@ class _HomePageState extends State<HomePage> {
               items: <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
                     icon: Icon(Icons.event), title: Text('Eventos')),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.account_balance), title: Text('Visitas')),
                 BottomNavigationBarItem(
                     icon: Icon(Icons.hotel), title: Text('Servicios')),
                 BottomNavigationBarItem(

@@ -1,0 +1,81 @@
+import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import './visita.dart';
+import './visita-detalle.dart';
+
+class Visitas extends StatefulWidget {
+  State<StatefulWidget> createState() {
+    return _VisitasState();
+  }
+}
+
+class _VisitasState extends State<Visitas> {
+  bool _isLoading = true;
+  var visitas;
+
+  _fetchData() async {
+    final url = 'https://api.myjson.com/bins/13t4sc';
+    final response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      List<dynamic> visitasJson = json.decode(utf8.decode(response.bodyBytes));
+
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+          this.visitas = visitasJson;
+        });
+      }
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchData();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        centerTitle: true,
+        title: new Text('Visitas'),
+        actions: <Widget>[
+          new IconButton(
+            icon: new Icon(Icons.refresh),
+            onPressed: () {
+              if (mounted) {
+                setState(() {
+                  _isLoading = true;
+                });
+              }
+              _fetchData();
+            },
+          )
+        ],
+      ),
+      body: new Center(
+        child: _isLoading
+            ? new CircularProgressIndicator()
+            : new ListView.builder(
+                itemCount: this.visitas != null ? this.visitas.length : 0,
+                itemBuilder: (context, i) {
+                  final visita = this.visitas[i];
+                  return new FlatButton(
+                    padding: new EdgeInsets.all(0.0),
+                    child: new Visita(visita),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new VisitaDetalle(visita)));
+                    },
+                  );
+                },
+              ),
+      ),
+    );
+  }
+}
