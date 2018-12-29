@@ -24,7 +24,8 @@ class EventoType extends AbstractType
                                 'rows'=>'5')
                 ))
             ->add('localizacion', TextType::class, array(
-                'label' => 'Localización'
+                'label' => 'Localización',
+                'required' => false
             ))
             ->add('save', SubmitType::class, array(
                 'attr' => array('class' => 'btn float-right'),

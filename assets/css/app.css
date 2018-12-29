@@ -26,6 +26,13 @@ header > nav {
     background: #163172;         
 }
 
+/* h1 */
+
+body > h1 {
+    margin: 20px;
+    color: #163172;
+}
+
 
 
  

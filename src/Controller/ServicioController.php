@@ -47,14 +47,6 @@ class ServicioController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="servicio_show", methods={"GET"})
-     */
-    public function show(Servicio $servicio): Response
-    {
-        return $this->render('servicio/show.html.twig', ['servicio' => $servicio]);
-    }
-
-    /**
      * @Route("/{id}/edit", name="servicio_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Servicio $servicio): Response
