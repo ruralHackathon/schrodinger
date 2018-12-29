@@ -59,9 +59,35 @@
                 <img class="d-block w-100" src='/image/castillo.jpg' alt="First slide">
         </div>
         {% for evento in eventos %}
-            <div class="carousel-item">
+            <div class="carousel-item" data-toggle="modal" data-target="#modalevento{{loop.index}}">
                 <img class="d-block w-100" src='/image/eventos/{{evento.foto}}' alt="First slide">
             </div>
+
+
+            <div class="modal fade" id="modalevento{{loop.index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle"> {{evento.nombre}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="card-img-top" src='/image/eventos/{{evento.foto}}' height="100px" alt="Card image cap">
+                        {% if evento.fecha|date('H:i') != '00:00'%}
+                            <p><strong> {{ evento.fecha|date('d-m-Y H:i')}} </strong></p>
+                        {% else %}
+                            <p><strong> {{ evento.fecha|date('d-m-Y')}} </strong></p>
+                        {% endif %}
+                        <p>{{ evento.descripcion}} </p>
+                        {% if evento.localizacion != null %}
+                        <p>Localización: {{ evento.localizacion}} </p>
+                        {% endif %}
+                    </div>
+                    </div>
+                </div>
+            </div>  
         {% endfor %}
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
