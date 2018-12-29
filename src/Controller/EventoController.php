@@ -20,7 +20,7 @@ class EventoController extends AbstractController
      */
     public function index(EventoRepository $eventoRepository): Response
     {
-        return $this->render('evento/index.html.twig', ['eventos' => $eventoRepository->findAll()]);
+        return $this->render('evento/index.html.twig', ['eventos' => $eventoRepository->findBy([],['fecha' => 'ASC'],30,0)]);
     }
 
     /**
@@ -44,14 +44,6 @@ class EventoController extends AbstractController
             'evento' => $evento,
             'form' => $form->createView(),
         ]);
-    }
-
-    /**
-     * @Route("/{id}", name="evento_show", methods={"GET"})
-     */
-    public function show(Evento $evento): Response
-    {
-        return $this->render('evento/show.html.twig', ['evento' => $evento]);
     }
 
     /**

@@ -47,14 +47,6 @@ class LugarController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="lugar_show", methods={"GET"})
-     */
-    public function show(Lugar $lugar): Response
-    {
-        return $this->render('lugar/show.html.twig', ['lugar' => $lugar]);
-    }
-
-    /**
      * @Route("/{id}/edit", name="lugar_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Lugar $lugar): Response

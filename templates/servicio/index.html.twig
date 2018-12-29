@@ -9,7 +9,7 @@
         {% for servicio in row %}
             <div  class="col-xs-12 col-sm-6 col-md-4">
                 <div class="card" data-toggle="modal" data-target="#modalservicio{{loop.index}}">
-                    <img class="card-img-top" src='/image/{{servicio.logo}}' height="40px" alt="Card image cap">
+                    <img class="card-img-top" src='/image/servicios/{{servicio.logo}}' height="300px" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ servicio.nombre}}</h5>                                 
                     </div>
@@ -29,7 +29,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <img class="card-img-top" src='/image/{{servicio.logo}}' height="40px" alt="Card image cap">
+                        <img class="card-img-top" src='/image/servicios/{{servicio.logo}}' height="40px" alt="Card image cap">
                         <p>Teléfono: {{ servicio.telefono}} </p>
                         {% if servicio.web != null %}
                         <p>Web: {{ servicio.web}} </p>
@@ -38,13 +38,11 @@
                         <p>Email: {{ servicio.email}} </p>
                         {% endif %}
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    </div>
                     </div>
                 </div>
             </div>  
         {% endfor %}
       </div>
     {% endfor %}  
+<a href="{{path('inicio')}}"><i class="fas fa-arrow-circle-left"></i>Volver</a>
 {% endblock %}
